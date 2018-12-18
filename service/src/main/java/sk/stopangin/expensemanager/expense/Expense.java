@@ -16,7 +16,7 @@ public class Expense {
     private User creator;
     @Column(name = "description")
     private String description;
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     private Category category;
 
 

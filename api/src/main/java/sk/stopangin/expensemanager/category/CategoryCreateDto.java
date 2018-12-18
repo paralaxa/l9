@@ -2,10 +2,14 @@ package sk.stopangin.expensemanager.category;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 public class CategoryCreateDto implements Serializable {
+    @NotNull(message = "name cannot be null")
     private String name;
+    @Size(min=5, message = "description must have at least 5 characters")
     private String description;
     @JsonIgnore
     private Long creatorId;
